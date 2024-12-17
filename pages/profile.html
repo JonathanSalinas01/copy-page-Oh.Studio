@@ -4,14 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              keyframes: {
+                bounceUpDown: {
+                  '0%, 100%': { transform: 'translateY(0)' },
+                  '50%': { transform: 'translateY(-20px)' },
+                },
+              },
+              animation: {
+                bounceUpDown: 'bounceUpDown 1s ease-in-out ',
+              },
+            },
+          },
+        };
+      </script>
     <link rel="shortcut icon" href="../icono.jpg" type="image/x-icon">
     <title>Profile - OH.Studio</title>
 </head>
 <body>
-    <header class="mb-8 pb-8">
+    <header class="mb-8 pb-8 sticky top-3 z-50">
         <nav class="mb-8">
-            <div class="flex justify-center mt-2 w-17 h-23">
-                <ul class="flex  bg-zinc-300 w-17 rounded-3xl w-17 h-23 p-1">
+            <div class="flex justify-center mt-2 w-17 h-23 ">
+                <ul class="flex  bg-zinc-300 w-17 rounded-3xl h-23 p-1">
                     <li class="m-2 p-2"><a href="../index.html">Home</a></li>
                     <li class="m-2 p-2 bg-slate-100 rounded-3xl"><a href="#">Profile</a></li>
                     <li class="m-2 p-2"><a href="contacts.html">Contacts</a></li>
@@ -19,7 +36,7 @@
             </div>
         </nav>
     </header>
-    <main class="my-3 pb-8">
+    <main class="my-3 pb-8 animate-bounceUpDown">
         <section class="mt-5 pt-8">
             <div class="flex flex-col justify-center items-center">
                 <h1 class="text-4xl font-bold">Hey, I'm Jonathan</h1>
@@ -27,11 +44,11 @@
             </div>
         </section>
         <section class="flex justify-center mt-5 pt-8">
-            <div class="flex justify-center w-3/4 h-1/5 mr-2 p-2">
+            <div class="flex justify-center w-3/4 h-1/5 mr-4 p-2">
                 <div class="h-auto w-auto">
-                    <img class=" rounded-3xl cover" src="../assets/images/perfil.avif" alt="foto perfil">
+                    <img class="rounded-3xl cover" src="../assets/images/perfil.avif" alt="foto perfil">
                 </div>
-                <div class="h-auto w-auto flex ml-2">
+                <div class="h-auto w-auto flex ml-4">
                     <img class="rounded-3xl" src="../assets/images/perfil-2.avif" alt="foto perfil">
                 </div>
             </div>
